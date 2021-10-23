@@ -26,9 +26,12 @@ services:
   mariadb:
     container_name: mariadb-10-4-${DOCKER_APP_NAME}
     restart: always
+    env_file: ./.env
     build:
       context: ./config
       dockerfile: mariadb.dockerfile
+      args:
+        - DOCKER_APP_UID=${DOCKER_APP_UID}
     environment:
       MARIADB_ROOT_PASSWORD: root
       MARIADB_DATABASE: app
