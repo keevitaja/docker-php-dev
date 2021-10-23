@@ -2,6 +2,4 @@
 
 DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" > /dev/null && pwd )
 
-source $DIR/env
-
 docker exec -it --user ${DOCKER_APP_USERNAME} -w /var/www/html ${DOCKER_APP_CONTAINER} bash

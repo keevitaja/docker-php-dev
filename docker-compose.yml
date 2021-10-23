@@ -3,6 +3,7 @@ services:
   web:
     container_name: ${DOCKER_APP_CONTAINER}
     restart: always
+    env_file: ./.env
     build:
       context: ./config
       dockerfile: apache.dockerfile
@@ -22,9 +23,6 @@ services:
       - ./..:/var/www/html
       - $HOME/.ssh:/home/user/.ssh
       - ./home:/home/user
-    environment:
-      - APACHE_RUN_USER=#${DOCKER_APP_UID}
-      - APACHE_RUN_GROUP=#${DOCKER_APP_UID}
   mariadb:
     container_name: mariadb-10-4-${DOCKER_APP_NAME}
     restart: always

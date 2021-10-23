@@ -1,6 +1,8 @@
 # Docker setup for php development (WIP)
 
-Put this repository into your project root and copy config/docker.env to your project root and make changes as needed.
+Put this repository into your project root and copy `env.example` to `.env` and make changes as needed.
+
+You should match UID,GIT,USERNAME to your host machine.
 
 ```
 └── project_root
