@@ -1,7 +1,8 @@
 version: '3.9'
 services:
-  web:
+  main:
     container_name: ${DOCKER_APP_CONTAINER}
+    image: main-${DOCKER_APP_NAME}
     restart: always
     env_file: ./.env
     build:
@@ -25,6 +26,7 @@ services:
       - ./home:/home/user
   mariadb:
     container_name: mariadb-10-4-${DOCKER_APP_NAME}
+    image: mariadb-${DOCKER_APP_NAME}
     restart: always
     env_file: ./.env
     build:
